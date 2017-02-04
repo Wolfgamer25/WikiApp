@@ -1,0 +1,21 @@
+#wiki{
+  width:40%;
+}
+body{
+  background-image: url('http://vignette3.wikia.nocookie.net/p__/images/8/88/Gray-background-3.jpg/revision/latest?cb=20160402025747&path-prefix=protagonist');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  text-align: center;
+
+
+}
+.btn{
+  float:right;
+}
+#search{
+margin-left: 450px;
+}
+#color h1, #color h2{
+  color: white;
+}

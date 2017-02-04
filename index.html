@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WikiApp</title>
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="app.css" />
+<script src="https://use.fontawesome.com/72ae570b82.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="controller.js"></script>
+  </head>
+  <body ng-app='wikiApp' ng-controller='wikiCtrl'>
+    <div class='container text-center'>
+      <h1>
+    {{headerInfo.project}}
+    </h1>
+      <h3>{{headerInfo.site}}</h3>
+      <h2>
+    <a ng-href='{{headerInfo.profile}}'>
+      {{headerInfo.profile}}
+      <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+    </a>
+    </h2>
+      <a ng-href='{{randomLink}}'>
+        <img id='wiki' src='http://vignette2.wikia.nocookie.net/c__/images/6/63/Wikipedia-logo.png/revision/20100716153224?path-prefix=clannad' />
+      </a>
+      <div id="search">
+        <div class="col-md-4">
+          <input class='form-control' ng-model='searchTerm' placeholder='Search'>
+          </div>
+          <div class='col-md-1'>
+            <a class='btn btn-primary'ng-click="searchWiki()">
+                Search</a>
+          </div>
+        <br />
+      </div>
+        <div id='color'>
+          <span ng-repeat='info in searchTermArr[0]'>
+            <a ng-href="{{searchTermArr[2][index]}}">
+            <h1>
+              {{$index +1 + '.'}} {{info}}
+              </h1>
+              <h2>{{searchTermArr[1][$index]}}</h2>
+              <hr>
+            </a>
+          </span>
+        </div>
+      </div>
+  </body>
+</html>
